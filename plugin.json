@@ -1,8 +1,8 @@
 {
-	"id": "nodebb-plugin-desktop-notifications",
+	"id": "nodebb-plugin-desktop-notifications-v2mm",
 	"name": "NodeBB Desktop Notifications",
 	"description": "Uses the HTML5 Notifications API to display desktop alerts upon new incoming notifications.",
-	"url": "https://github.com/psychobunny/nodebb-plugin-desktop-notifications",
+	"url": "https://github.com/revir/nodebb-plugin-desktop-notifications-v2mm",
 	"library": "./library.js",
 	"scripts": [
 	"public/vendor/notify/notify.js",
