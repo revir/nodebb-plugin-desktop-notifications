@@ -17,5 +17,7 @@
 		{
 			"hook": "action:notification.pushed", "method": "pushed"
 		}
-	]
+	],
+	"languages": "languages",
+	"defaultLang": "en_US"
 }

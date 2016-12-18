@@ -27,7 +27,7 @@
 			}
 
 			if (!notifications.ignore && Notify.permissionLevel !== 'granted') {
-				templates.parse('partials/nodebb-plugin-desktop-notifications/alert-bar', {siteTitle: config.siteTitle}, function(tpl) {
+				app.parseAndTranslate('partials/nodebb-plugin-desktop-notifications/alert-bar', {siteTitle: config.siteTitle}, function(tpl) {
 					components.get('navbar').prepend($(tpl));
 
 					notifications.originalPadding = parseInt($('body').css('padding-top'), 10);
@@ -48,7 +48,7 @@
 		var logo = $('.forum-logo').attr('src');
 
 		requestPermission();
-		
+
 		socket.on('event:plugin:desktop_notifications', function(data) {
 			if (!data) {
 				return;
@@ -64,7 +64,7 @@
 						icon: logo,
 						timeout: 5,
 						notifyClick: function() {
-							socket.emit('notifications.get', {nids: [data.nid]}, function(err, notifs) { 
+							socket.emit('notifications.get', {nids: [data.nid]}, function(err, notifs) {
 								if (notifs.length) {
 									ajaxify.go(notifs[0].path.substring(1));
 								}
@@ -74,7 +74,7 @@
 					});
 					notification.show();
 
-					
+
 					if (data.tid) {
 						$(window).on('action:ajaxify.start', removeNotif);
 						setTimeout(function() {
